@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
@@ -101,28 +102,60 @@ fun Gold(){
 
 
         ) {
-            val fille = LocalContext.current
-
-            Text(text = "Input",
-                modifier = Modifier
-                    .clickable { fille.startActivity(Intent(fille, InputActivity::class.java)) }
-
-
-            )
-
-
-
-
-
+            Text(text = "START")
         }
 
 
 
+            Column {
+                val fille = LocalContext.current
+
+                Text(text = "Access choose activity here",
+                    color = Color.Cyan,
+                    modifier = Modifier
+                        .clickable {
+                            fille.startActivity(Intent(fille, ChooseActivity::class.java))
+                        }
+                )
+
+                Spacer(
+                    modifier = Modifier
+                        .width(10.dp)
+                        .height(10.dp)
+                )
 
 
+                val Web = LocalContext.current
+
+                Text(text = "Access Web Activity here",
+                    color = Color(0xFFBB86FC),
+                    modifier = Modifier
+                        .clickable { Web.startActivity(Intent(Web, WebActivity::class.java)) }
 
 
+                )
+                Spacer(
+                    modifier = Modifier
+                        .width(10.dp)
+                        .height(10.dp)
+                )
 
+
+                val Input = LocalContext.current
+
+                Text(text = "Access input Activity here",
+                    color = Color(0xFFBB86FC),
+                    modifier = Modifier
+                        .clickable { Input.startActivity(Intent(Input, InputActivity::class.java)) }
+
+                )
+                Spacer(
+                    modifier = Modifier
+                        .width(10.dp)
+                        .height(10.dp)
+                )
+
+            }
 
 
 
